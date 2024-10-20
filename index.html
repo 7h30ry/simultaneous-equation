@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simultaneous Equation Solver</title>
+    
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="solver">
+            <h1>Simultaneous Equation Solver</h1>
+            <p>Quickly solve your simultaneous equations with ease!</p>
+
+            <!-- Input fields -->
+            <label for="equation-one">Equation One</label>
+            <input type="text" id="equation-one" value="x + y = 8" />
+
+            <label for="equation-two">Equation Two</label>
+            <input type="text" id="equation-two" value="2x - y = 7" />
+
+            <label for="variable-one-name">Variable One Name</label>
+            <input type="text" id="variable-one-name" value="x" />
+
+            <label for="variable-two-name">Variable Two Name</label>
+            <input type="text" id="variable-two-name" value="y" />
+
+            <label for="attempt-range">Max Attempts</label>
+            <input type="number" id="attempt-range" value="100" />
+
+            <div class="checkbox-section">
+                <input type="checkbox" id="table-enabled" />
+                <label for="table-enabled">Enable Detailed Table</label>
+            </div>
+
+            <!-- Solve button -->
+            <button onclick="useInputsAndSolve()">Solve</button>
+            <span id="status" style="display: none">Calculating...</span>
+
+            <!-- Output area -->
+            <div class="output-section">
+                <b>Output:</b>
+                <textarea id="output" readonly></textarea>
+            </div>
+        </div>
+
+        <!-- Table section for displaying data -->
+        <div class="results">
+            <table id="table"></table>
+        </div>
+    </div>
+
+    <!-- Math.js & Script for equation solving -->
+    <script src="https://unpkg.com/mathjs@12.4.2/lib/browser/math.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
